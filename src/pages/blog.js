@@ -34,6 +34,7 @@ const BlogPage = () => {
                   return (
                         <li
                           key={title + index}
+                          className={blogStyles.post}
                         >
                             <Link
                               to={`/blog/${slug}`}
