@@ -1,9 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
   siteMetadata: {
     title: 'Full-Stack Bootcamp',
@@ -11,15 +5,15 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
     },
     'gatsby-plugin-sass',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         name: 'src',
         path: `${__dirname}/src/`

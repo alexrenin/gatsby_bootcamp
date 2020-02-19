@@ -1,28 +1,28 @@
 import React from 'react'
 
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 
 export const query = graphql`
   query (
-  $slug: String!
-) {
-  markdownRemark(
-    fields: {
-      slug: {
-        eq: $slug
-      }
-      
-    }
+    $slug: String!
   ) {
-    frontmatter {
-      title
-      date
+    markdownRemark(
+      fields: {
+        slug: {
+          eq: $slug
+        }
+        
+      }
+    ) {
+      frontmatter {
+        title
+        date
+      }
+      html
     }
-    html
   }
-}
 `
 
 const Blog = (props) => {
